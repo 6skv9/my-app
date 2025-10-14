@@ -12,7 +12,7 @@ const SignUp = () => {
         e.preventDefault();
         try{
             const res = await api.post("v1/hello", form);
-            localStorage.setItem("token", res.data.token);
+            // localStorage.setItem("token", res.data.token);
             navigate("/home");
         }
         catch (err){
