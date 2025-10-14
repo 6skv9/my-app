@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import api from "../axiosConfig";
 import {useNavigate} from "react-router-dom";
-
+//import"./Login.css";
 const Login = () => {
     const [form, setForm] = useState({username:"", password: ""});
     const navigate = useNavigate();
@@ -21,16 +21,28 @@ const Login = () => {
     };
 
     return (
-        <div>
+        <div className="login-page">
+        <div className="login-container">
             <h2>Login</h2>
-            <form onSubmit={handleSubmit}>
-                <input name = "username" placeholder= "Username" onChange={handleChange}/>
-                <input name = "password" placeholder= "Password" onChange={handleChange}/>
+            <form onSubmit={handleSubmit} className="login-form">
+                <input name = "username" 
+                placeholder= "Username" 
+                onChange={handleChange}
+                required
+                />
+                <input name = "password" 
+                placeholder= "Password"
+               onChange={handleChange} 
+               required
+               />
                 <button type="submit">Login</button>
             </form>
-            <p>Don't have an account? <button onClick={() => navigate("/signup")}>Signup here</button> </p>
+            <p>Don't have an account? <button onClick={() => navigate("/signup")}>Signup here</button>
+             </p>
+        </div>
         </div>
     )
 }
+
 
 export default Login;

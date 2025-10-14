@@ -4,6 +4,7 @@ import Header from './Header'
 import SignUp from "./SignUp";
 import Login from "./Login";
 import Home from "./Home";
+import 'semantic-ui-css/semantic.min.css';
 
 function App() {
   return (
