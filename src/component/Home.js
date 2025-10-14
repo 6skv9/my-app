@@ -6,7 +6,7 @@ const Home = () => {
     const navigate = useNavigate();
 
     const logout = () => {
-        localStorage.remove("token");
+        // localStorage.remove("token");
         navigate("/login");
     }
 
