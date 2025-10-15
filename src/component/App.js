@@ -5,10 +5,17 @@ import SignUp from "./SignUp";
 import Login from "./Login";
 import Home from "./Home";
 import 'semantic-ui-css/semantic.min.css';
-
+import bgImage from'../component/h.jpg';
 function App() {
   return (
-    <div className="App">
+    <div className="App"  style={{        backgroundImage: `url(${bgImage})`, 
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        minHeight: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",}}>
         <BrowserRouter>
             <Header />
             <Routes>
