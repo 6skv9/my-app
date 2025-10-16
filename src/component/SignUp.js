@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import api from "../axiosConfig";
 import {useNavigate} from "react-router-dom";
 import { Form,Button, Container,Segment,Header, Dropdown } from 'semantic-ui-react';
-import bgImage from'../component/h.jpg';
+import bgImage from'../component/l.jpg';
 const SignUp = () => {
     const [form, setForm] = useState({name:"",email:"" ,mobile:"",password: "",role:"",});
     const navigate = useNavigate();
@@ -39,7 +39,8 @@ const SignUp = () => {
                 minHeight:'100vh',
                 display:'flex',
                 alignItems:'center',
-                justifyContent:'center'
+                justifyContent:'center',
+                padding:'2em',
           
 
        }}
@@ -121,19 +122,20 @@ const SignUp = () => {
 
                   />
                  <Form.Field name="role">
-                 <label style={{fontWeight:'bold'}}>Role</label>
+                 <label  style={{ fontSize: '1.1em'}}>Role</label>
                  <Dropdown
                   placeholder="Select Role"
-                  fluid
-                  selection
-                  options={roleOptions}
-                  name="role"
-                  onChange={handleChange}
                   style={{
                    border: '1px solid #ccc',
                    borderRadius: '5px',
                    padding: '10px',
                      }}
+                  fluid
+                  selection
+                  options={roleOptions}
+                  name="role"
+                  onChange={handleChange}
+                  
                 />  
                 </Form.Field>
                 <Button color="blue"  fluid type="submit">Register</Button>

@@ -5,10 +5,10 @@ import SignUp from "./SignUp";
 import Login from "./Login";
 import Home from "./Home";
 import 'semantic-ui-css/semantic.min.css';
-import bgImage from'../component/h.jpg';
+import bgImage from'../component/l.jpg';
 function App() {
   return (
-    <div className="App"  style={{        backgroundImage: `url(${bgImage})`, 
+    <div className="App"  style={{backgroundImage: `url(${bgImage})`, 
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
