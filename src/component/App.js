@@ -5,7 +5,7 @@ import SignUp from "./SignUp";
 import Login from "./Login";
 import Home from "./Home";
 import 'semantic-ui-css/semantic.min.css';
-import bgImage from'../component/l.jpg';
+import bgImage from'../resources/r.jpg';
 function App() {
   return (
     <div className="App"  style={{backgroundImage: `url(${bgImage})`, 

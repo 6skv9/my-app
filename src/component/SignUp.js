@@ -1,8 +1,12 @@
 import React, {useState} from "react";
 import api from "../axiosConfig";
 import {useNavigate} from "react-router-dom";
-import { Form,Button, Container,Segment,Header, Dropdown } from 'semantic-ui-react';
-import bgImage from'../component/l.jpg';
+import { Form,Button, Container,Segment,Header, Dropdown ,Icon} from 'semantic-ui-react';
+//import{icon} from 'semantic-ui-react';
+import bgImage from'../resources/r.jpg';
+//import { Cinzel } from "next/font/google";
+//const cinzel = Cinzel({ subsets: ["latin"], weight: ["400", "600", "700"] });
+
 const SignUp = () => {
     const [form, setForm] = useState({name:"",email:"" ,mobile:"",password: "",role:"",});
     const navigate = useNavigate();
@@ -11,6 +15,7 @@ const SignUp = () => {
           const name = data?.name || e.target.name;
           const value = data?.value || e.target.value;
           setForm(prev => ({ ...prev, [name]: value }));
+          
     };
 
     const handleSubmit = async (e) => {
@@ -29,10 +34,10 @@ const SignUp = () => {
       {key:'admin', text:'Admin',value:'ADMIN'},
       {key:'manager', text:'Manager',value:'MANAGER'},
       ];
-
+         const [showPassword, setShowPassword] = useState(false); 
     return (
         <div  
-         style={{ backgroundImage: `url(${bgImage})`,
+         style={{backgroundImage: `url(${bgImage})`,
                 backgroundSize:'cover',
                 backgroundPosition:'center',
                 backgroundRepeat:'no-repeat',
@@ -41,7 +46,8 @@ const SignUp = () => {
                 alignItems:'center',
                 justifyContent:'center',
                 padding:'2em',
-          
+                paddingLeft: '120vw',
+                paddingBottom :'50vw',
 
        }}
         
@@ -73,11 +79,11 @@ const SignUp = () => {
           }}
           >
             
-          < Header as="h2" color="black" textAlign="center"style={{
+          < Header as="h2" color="black" textAlign="center"style={{fontFamily: "'Cinzel', serif",
              fontSize: '2em', marginBottom: '1em' }} 
              > Sign Up </Header>
 
-            <Form onSubmit={handleSubmit}  style={{ fontSize: '1.1em'}}> 
+            <Form onSubmit={handleSubmit}  style={{ fontSize: '1.1em',fontFamily: "'Cinzel', serif",}}> 
                 <Form.Input name ="name" label = "Username" 
                 placeholder= "Username"
                  onChange={handleChange}
@@ -85,20 +91,21 @@ const SignUp = () => {
                     border: '1px solid #ccc',
                     borderRadius: '5px',
                      padding: '10px',
-                    fontfamily:"'Poppins','sans-serief'",
-
+                     fontFamily: "'Cinzel', serif",
+                     color:"#333",
                   }}
-
                  />
-                 <Form.Input name="email" label="Email"
+                 <Form.Input name="email" label="Email" 
                  placeholder="Email"
                  onChange={handleChange}
                    style={{
                     border: '1px solid #ccc',
                      borderRadius: '5px',
                       padding: '10px',
+                      fontSize: '1.1em',
+                        fontFamily: "'Cinzel', serif",  
+                         color:"#333",
                      }}
-
                  />
                  <Form.Input name ="mobile" label="Phone"
                  placeholder="phone" 
@@ -107,29 +114,43 @@ const SignUp = () => {
                   border: '1px solid #ccc', 
                   borderRadius: '5px',
                    padding: '10px',
+                   fontSize: '1.1em',
+                   fontFamily: "'Cinzel', serif",  
+                     color:"#333",
                    
                   }}
 
                  />
                 <Form.Input name="password" label = "Password"      
-                  placeholder= "password"
+                  placeholder= " Enter password"
+                  type={showPassword ? "text" : "password"} 
                   onChange={handleChange}
                     style={{
                     border: '1px solid #ccc',
                    borderRadius: '5px',
                    padding: '10px',
+                   fontFamily: "'Cinzel', serif", 
+                    fontSize: '1.1em',
+                    color:'#333'
                    }}
-
+                  icon={
+                 <Icon
+                  name={showPassword ? "eye slash" : "eye"} 
+                   link
+                 onClick={() => setShowPassword(!showPassword)} 
+                   />
+                 }
                   />
                  <Form.Field name="role">
-                 <label  style={{ fontSize: '1.1em'}}>Role</label>
+                 <label  style={{   fontFamily: "'Cinzel', serif",
+                   fontSize: '1em',}}>Role</label>
                  <Dropdown
-                  placeholder="Select Role"
-                  style={{
-                   border: '1px solid #ccc',
+                  placeholder="Select role" 
+                  style={{border: '1px solid #ccc',
                    borderRadius: '5px',
                    padding: '10px',
-                     }}
+                   fontFamily: "'Cinzel', serif", 
+                  fontSize: '1.1em',}}
                   fluid
                   selection
                   options={roleOptions}
