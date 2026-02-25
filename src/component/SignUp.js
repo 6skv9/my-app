@@ -1,12 +1,9 @@
 import React, {useState} from "react";
+//import api from "../authService";
 import api from "../axiosConfig";
 import {useNavigate} from "react-router-dom";
 import { Form,Button, Container,Segment,Header, Dropdown ,Icon} from 'semantic-ui-react';
-//import{icon} from 'semantic-ui-react';
-import bgImage from'../resources/r.jpg';
-//import { Cinzel } from "next/font/google";
-//const cinzel = Cinzel({ subsets: ["latin"], weight: ["400", "600", "700"] });
-
+import bgImage from'../resources/g.jpg';
 const SignUp = () => {
     const [form, setForm] = useState({name:"",email:"" ,mobile:"",password: "",role:"",});
     const navigate = useNavigate();
@@ -24,6 +21,7 @@ const SignUp = () => {
             const res = await api.post("v1/Signup", form);
             // localStorage.setItem("token", res.data.token);
             navigate("/home");
+          
         }
         catch (err){
             alert("Failed");
@@ -35,13 +33,14 @@ const SignUp = () => {
       {key:'manager', text:'Manager',value:'MANAGER'},
       ];
          const [showPassword, setShowPassword] = useState(false); 
+         
     return (
         <div  
          style={{backgroundImage: `url(${bgImage})`,
                 backgroundSize:'cover',
                 backgroundPosition:'center',
                 backgroundRepeat:'no-repeat',
-                minHeight:'100vh',
+                minHeight:'90vh',
                 display:'flex',
                 alignItems:'center',
                 justifyContent:'center',
@@ -135,7 +134,7 @@ const SignUp = () => {
                    }}
                   icon={
                  <Icon
-                  name={showPassword ? "eye slash" : "eye"} 
+                  name={ showPassword ? "eye slash":" "}
                    link
                  onClick={() => setShowPassword(!showPassword)} 
                    />
