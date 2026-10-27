@@ -1,5 +1,5 @@
-import './App.css';
-/*import {BrowserRouter, Routes, Route, Navigate} from "react-router-dom";
+ /*import './App.css';
+import {BrowserRouter, Routes, Route, Navigate} from "react-router-dom";
 import Header from './Header'
 import SignUp from "./SignUp";
 import Login from "./Login";
@@ -45,7 +45,7 @@ const App = () => (
 
 export default App;*/
 
-import React, { useState } from 'react';
+/*import React, { useState } from 'react';
 import Navbars from '../component/Navbars/Navbars';
 import { Route, Routes } from 'react-router-dom';
 //import Homes from './pages/Homes/Homes'
@@ -66,7 +66,7 @@ const [showLogin,setShowLogin] = useState(false)
       <Navbars setShowLogin={setShowLogin} />
       <Routes>
         <Route path='/' element={<Homes/>} />
-        {/* <Route path='cart' element={<Cart/> } /> */}
+        {/* <Route path='cart' element={<Cart/> } /> }
         <Route path='cart' element={<Cart/>} />
         <Route path='order' element={<PlaceOrder/>} />
       </Routes>
@@ -76,5 +76,20 @@ const [showLogin,setShowLogin] = useState(false)
  
   )
 }
+
+export default App;*/
+
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "semantic-ui-css/semantic.min.css";
+import Flipkart from "./flipkart";
+
+const App = () => (
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Flipkart />} />
+    </Routes>
+  </BrowserRouter>
+);
 
 export default App;
