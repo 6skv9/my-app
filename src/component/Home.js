@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import api from "../axiosConfig";
 import {useNavigate} from "react-router-dom";
-
+import { Container,Segment,Header, Button} from "semantic-ui-react";
 const Home = () => {
     const navigate = useNavigate();
 
@@ -13,10 +13,16 @@ const Home = () => {
 
     return (
         <div>
-            <h1>Welcome to Home Page</h1>
-            <button onClick={logout}>Logout</button>
+        <Container textAlign="center" style={{ marginTop: '5em', }}>
+      <Segment padded="very" raised>
+        <Header as="h1" color="blue">
+          Welcome to Home Page
+         </Header>
+            <Button color="red" onClick={logout}>Logout</Button>
+            </Segment>
+            </Container>
         </div>
-    )
-}
+    );
+};
 
 export default Home;
