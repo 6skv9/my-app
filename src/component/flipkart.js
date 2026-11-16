@@ -4,14 +4,27 @@ function Flipkart() {
   const [orderId, setOrderId] = useState("");
   const [order, setOrder] = useState(null);
 
-  function trackOrder() {
+ /* function trackOrder() {
     if (orderId.trim().toUpperCase() === "FK1001") {
       setOrder({
         product: "Samsung Galaxy Smartphone",
         price: 15999,
         status: "Shipped",
         delivery: "30 October 2026",
-      });
+      });*/
+  //change trackorder//
+  const trackOrder = () => {
+  if (orderId.trim().toUpperCase() === "FK1001") {
+    setOrder({
+      product: "Samsung Galaxy Smartphone",
+      price: 15999,
+      status: "Shipped",
+      delivery: "30 October 2026",
+    });
+  } else {
+    setOrder("notfound");
+  }
+};
     } else {
       setOrder("notfound");
     }
